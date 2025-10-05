@@ -2,47 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu - AsxanaHub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Ваш кастомный CSS для сохранения оригинального стиля -->
   <style>
+    :root {
+      --primary: #FF5E5B;
+      --border: #000;
+      --bg: #fff;
+      --text: #222;
+    }
+    
+    .custom-primary { 
+      background-color: var(--primary) !important; 
+      border-color: var(--primary) !important; 
+      color: white !important;
+    }
+    
+    .custom-primary:hover { 
+      background-color: #e04c49 !important; 
+      border-color: #e04c49 !important;
+      color: white !important;
+    }
+    
+    /* Ваши оригинальные тени и стили карточек */
+    .custom-card {
+      background: var(--bg);
+      border: 2px solid var(--border) !important;
+      border-radius: 12px;
+      box-shadow: 6px 6px 0px var(--border) !important;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .custom-card:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 10px 10px 0px var(--border) !important;
+    }
+    
+    /* Сохраняем ваш шрифт */
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fff;
-      color: #222;
+      font-family: 'Courier New', monospace;
+      background-color: var(--bg);
+      color: var(--text);
     }
-    .navbar-brand img {
-      width: 35px;
-      margin-left: 5px;
+    
+    /* Стили для кнопок как в вашем CSS */
+    .custom-btn {
+      background: var(--primary);
+      color: var(--bg);
+      padding: 10px 22px;
+      border: 2px solid var(--border) !important;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    footer {
-      border-top: 2px solid #000;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
+    
+    .custom-btn:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 4px 4px 0px var(--border);
+      color: var(--bg);
     }
   </style>
 </head>
 <body>
-
-  <!-- Навигация -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-4">
+  <!-- Bootstrap Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--text);">
     <div class="container">
-      <a class="navbar-brand fw-bold text-danger" href="#">AsxanaHub
-        <img src="images/burger.png" alt="logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <a class="navbar-brand fw-bold" href="main.html" style="color: var(--primary);">AsxanaHub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-        <ul class="navbar-nav mb-2 mb-lg-0">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="main.html">Home</a></li>
           <li class="nav-item"><a class="nav-link active" href="menu.html">Menu</a></li>
           <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
@@ -55,85 +89,88 @@
     </div>
   </nav>
 
-  <!-- Основной контент -->
-  <section class="container mb-5">
-    <div class="text-center mb-4">
-      <h2 class="fw-bold">Food - Menu</h2>
-      <p class="text-muted">Taste the best of AsxanaHub 🍔</p>
-    </div>
-
+  <!-- Bootstrap Menu Section с вашими стилями -->
+  <section id="menu" class="container my-5">
+    <h2 class="text-center mb-4 display-5 fw-bold">Food - Menu</h2>
+    
     <div class="row g-4">
-
-      <!-- Карточка -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card border-dark shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title text-danger">Donerhub - <i>3.99$</i></h5>
-            <p class="card-text">Juicy doner with our special cherry sauce.</p>
-            <button class="btn btn-danger w-100">Order Now</button>
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="custom-card h-100 p-3">
+          <div class="card-body d-flex flex-column p-0">
+            <h5 class="card-title fw-bold">Donerhub - <span class="text-danger">3.99$</span></h5>
+            <p class="card-text flex-grow-1">Juicy doner with our special cherry sauce.</p>
+            <button class="custom-btn mt-auto w-100">Order Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="custom-card h-100 p-3">
+          <div class="card-body d-flex flex-column p-0">
+            <h5 class="card-title fw-bold">Vibeshake - <span class="text-danger">2.65$</span></h5>
+            <p class="card-text flex-grow-1">Refreshing milkshake that matches your vibe.</p>
+            <button class="custom-btn mt-auto w-100">Order Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="custom-card h-100 p-3">
+          <div class="card-body d-flex flex-column p-0">
+            <h5 class="card-title fw-bold">MVP-Burger - <span class="text-danger">5.20$</span></h5>
+            <p class="card-text flex-grow-1">Your first bite to success — soft bun, fresh veggies, and premium beef.</p>
+            <button class="custom-btn mt-auto w-100">Order Now</button>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4 col-sm-6">
-        <div class="card border-dark shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title text-danger">Vibeshake - <i>2.65$</i></h5>
-            <p class="card-text">Refreshing milkshake that matches your vibe.</p>
-            <button class="btn btn-danger w-100">Order Now</button>
+      <!-- Card 4 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="custom-card h-100 p-3">
+          <div class="card-body d-flex flex-column p-0">
+            <h5 class="card-title fw-bold">Startup Fries - <span class="text-danger">2.99$</span></h5>
+            <p class="card-text flex-grow-1">Crispy golden fries — the sidekick to every big idea.</p>
+            <button class="custom-btn mt-auto w-100">Order Now</button>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4 col-sm-6">
-        <div class="card border-dark shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title text-danger">MVP-Burger - <i>5.20$</i></h5>
-            <p class="card-text">Your first bite to success — soft bun, fresh veggies, and premium beef.</p>
-            <button class="btn btn-danger w-100">Order Now</button>
+      <!-- Card 5 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="custom-card h-100 p-3">
+          <div class="card-body d-flex flex-column p-0">
+            <h5 class="card-title fw-bold">Cherry Cheesecake - <span class="text-danger">4.50$</span></h5>
+            <p class="card-text flex-grow-1">Creamy cheesecake with a cherry topping, perfect for sweet lovers.</p>
+            <button class="custom-btn mt-auto w-100">Order Now</button>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4 col-sm-6">
-        <div class="card border-dark shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title text-danger">Startup Fries - <i>2.99$</i></h5>
-            <p class="card-text">Crispy golden fries — the sidekick to every big idea.</p>
-            <button class="btn btn-danger w-100">Order Now</button>
+      <!-- Card 6 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="custom-card h-100 p-3">
+          <div class="card-body d-flex flex-column p-0">
+            <h5 class="card-title fw-bold">CodeCoffee - <span class="text-danger">1.99$</span></h5>
+            <p class="card-text flex-grow-1">Strong coffee to fuel your coding sessions — hot and energizing.</p>
+            <button class="custom-btn mt-auto w-100">Order Now</button>
           </div>
         </div>
       </div>
-
-      <div class="col-md-4 col-sm-6">
-        <div class="card border-dark shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title text-danger">Cherry Cheesecake - <i>4.50$</i></h5>
-            <p class="card-text">Creamy cheesecake with a cherry topping, perfect for sweet lovers.</p>
-            <button class="btn btn-danger w-100">Order Now</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-sm-6">
-        <div class="card border-dark shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title text-danger">CodeCoffee - <i>1.99$</i></h5>
-            <p class="card-text">Strong coffee to fuel your coding sessions — hot and energizing.</p>
-            <button class="btn btn-danger w-100">Order Now</button>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- Футер -->
-  <footer class="bg-light text-dark">
-    <p>© 2025 Asxana.hub. All rights reserved.</p>
+  <!-- Bootstrap Footer с вашими стилями -->
+  <footer class="py-4 mt-5" style="background-color: var(--bg); border-top: 2px solid var(--border);">
+    <div class="container text-center">
+      <p class="mb-1">© 2025 Asxana.hub. All rights reserved.</p>
+      <p class="mb-0">Team: [Ваши имена], Group: [Ваша группа]</p>
+    </div>
   </footer>
 
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
