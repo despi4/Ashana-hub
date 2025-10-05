@@ -372,3 +372,53 @@ a:hover {
     font-size: 1.4rem;
   }
 }
+
+
+/* Адаптивность для мобильных */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  
+  .navbar-container {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+  }
+  
+  .navbar-links {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  nav ul {
+    gap: 10px;
+  }
+  
+  nav a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --h1-size: 1.6rem;
+    --h2-size: 1.3rem;
+    --h3-size: 1.1rem;
+  }
+  
+  .about-container, .reviews-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .navbar-links {
+    gap: 8px;
+  }
+  
+  nav a {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+}
