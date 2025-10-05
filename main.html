@@ -4,7 +4,235 @@
   <meta charset="UTF-8">
   <title>AsxanaHub</title>
   <link href="https://fonts.googleapis.com/css2?family=Courier+New&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    /* --- Cherry-Cart Minimal Style for AsxanaHub --- */
+
+    :root {
+      --primary: #FF5E5B;
+      --border: #000;
+      --bg: #fff;
+      --text: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      font-family: 'Courier New', monospace;
+      color: var(--text);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    /* --- Header + Navbar --- */
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--bg);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 10px 0;
+      margin-bottom: 32px;
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .navbar-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .navbar-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .navbar-links a:hover {
+      color: var(--primary);
+    }
+
+    h1, h2 {
+      font-family: 'Courier New', monospace;
+      color: var(--text);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 20px 0;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* Main Grid Layout */
+    main {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* Grid Containers */
+    .about-container, .reviews-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    /* Cards */
+    .card, .food-item, .about-card, .review-card {
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 6px 6px 0px var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card:hover, .food-item:hover, .about-card:hover, .review-card:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 10px 10px 0px var(--border);
+    }
+
+    .food-item h3, .about-card h3, .review-card h3 {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .food-item p, .about-card p, .review-card p {
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .review-author {
+      font-weight: bold;
+      font-size: 0.9rem;
+      color: var(--text);
+      margin-top: 8px;
+    }
+
+    /* Buttons */
+    button {
+      background: var(--primary);    
+      color: var(--bg);               
+      padding: 12px 26px;             
+      border: none;                   
+      border-radius: 10px;            
+      font-size: 16px;                
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;   
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      margin-top: auto;
+    }
+
+    button:hover {
+      background: #ff3b3b;           
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    button:active {
+      transform: translateY(0);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sidebar .card {
+      height: fit-content;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg);
+      color: var(--text);
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 2px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      
+      .navbar-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .navbar-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .about-container, .reviews-container {
+        grid-template-columns: 1fr;
+      }
+      
+      body {
+        padding: 10px;
+      }
+      
+      main {
+        padding: 10px;
+        gap: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -19,7 +247,7 @@
         <a href="cart.html">Cart</a>
         <a href="auth.html">Login</a>
         <a href="discounts.html">Discounts</a>
-        <a href="profile.html">Profile</a><a href="profile.html">Profile</a>
+        <a href="profile.html">Profile</a>
       </nav>
     </div>
   </header>
